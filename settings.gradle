@@ -1,1 +1,4 @@
 include ':app'
+
+include ':ExpandTextViewLibrary'
+project(':ExpandTextViewLibrary').projectDir = new File(settingsDir, '../CaojunLibrary/ExpandTextViewLibrary')
