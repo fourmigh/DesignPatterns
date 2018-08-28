@@ -12,24 +12,26 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> PrincipleFragment()
-            1 -> SingletonFragment()
-            2 -> BuilderFragment()
-            3 -> PrototypeFragment()
-            4 -> FactoryFragment()
-            5 -> AbstractFactoryFragment()
+            1 -> PatternFragment()
+            2 -> SingletonFragment()
+            3 -> BuilderFragment()
+            4 -> PrototypeFragment()
+            5 -> FactoryFragment()
+            6 -> AbstractFactoryFragment()
             else -> PrincipleFragment()
         }
     }
 
     override fun getCount(): Int {
-        return 6
+        return 7
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return when (position) {
-            in 1 .. 23 -> {
+            1 -> context.getString(R.string.pattern)
+            in 2 .. 24 -> {
                 val designPatterns = context.resources.getStringArray(R.array.design_patterns)
-                designPatterns[position - 1]
+                designPatterns[position - 2]
             }
             else -> context.getString(R.string.principle)
         }

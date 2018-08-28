@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">设计模式</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">目录</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="or">或者</string>
     <string name="rn">%s\n%s</string>
 
     <string name="principle">面向对象的六大原则</string>
+    <string name="pattern">设计模式</string>
     <string name="advantages">优点</string>
     <string name="disadvantages">缺点</string>
 

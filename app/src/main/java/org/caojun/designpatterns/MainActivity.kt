@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
      * may be best to switch to a
      * [android.support.v4.app.FragmentStatePagerAdapter].
      */
-    private var mSectionsPagerAdapter: SectionsPagerAdapter? = null
+    private lateinit var mSectionsPagerAdapter: SectionsPagerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,11 +45,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
-                val title = mSectionsPagerAdapter?.getPageTitle(position)
-                toolbar.title = title
+                val title = mSectionsPagerAdapter.getPageTitle(position)
+//                toolbar.title = title
+                setTitle(title, position, mSectionsPagerAdapter.count)
             }
         })
-        toolbar.title = mSectionsPagerAdapter?.getPageTitle(0)
+//        toolbar.title = mSectionsPagerAdapter?.getPageTitle(0)
+        setTitle(mSectionsPagerAdapter.getPageTitle(0), 0, mSectionsPagerAdapter.count)
     }
 
 
@@ -66,9 +68,18 @@ class MainActivity : AppCompatActivity() {
         val id = item.itemId
 
         if (id == R.id.action_settings) {
+            container.setCurrentItem(1, true)
             return true
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    fun setCurrentItem(position: Int) {
+        container.setCurrentItem(position, true)
+    }
+
+    private fun setTitle(title: CharSequence, position: Int, size: Int) {
+        toolbar.title = "(${position + 1}/$size)$title"
     }
 }
