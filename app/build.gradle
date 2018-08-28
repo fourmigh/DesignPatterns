@@ -31,4 +31,5 @@ dependencies {
     implementation 'com.android.support.constraint:constraint-layout:latest.release'
     implementation 'org.jetbrains.anko:anko-common:latest.release'
     implementation project(':ExpandTextViewLibrary')
+    implementation project(':AdapterLibrary')
 }
