@@ -12,7 +12,7 @@ import org.caojun.designpatterns.R
 import org.caojun.designpatterns.utils.ArrayUtils
 
 /**
- * 抽象工厂模式
+ * 抽象工厂方法模式
  */
 class AbstractFactoryFragment: Fragment() {
 
