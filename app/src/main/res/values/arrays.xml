@@ -63,4 +63,13 @@
     <array name="prototype_disadvantages">
         <item>这既是它的优点也是缺点，直接在内存中拷贝，构造函数是不会执行的，在实际开发当中应该注意这个潜在的问题。优点就是减少了约束，缺点也是减少了约束，需要大家在实际应用时考虑。</item>
     </array>
+
+    <array name="factory_advantages">
+        <item>降低了对象之间的耦合度。</item>
+        <item>工厂方法模式依赖于抽象的架构，其将实例化的任务交由子类去完成，有非常好的扩展性。</item>
+    </array>
+
+    <array name="factory_disadvantages">
+        <item>每次我们为工厂方法模式添加新的产品时，就要编写一个新的产品类，同时还要引入抽象层，这必然会导致类结构的复杂化。</item>
+    </array>
 </resources>

@@ -5,10 +5,7 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import org.caojun.designpatterns.R
-import org.caojun.designpatterns.fragment.BuilderFragment
-import org.caojun.designpatterns.fragment.PrincipleFragment
-import org.caojun.designpatterns.fragment.PrototypeFragment
-import org.caojun.designpatterns.fragment.SingletonFragment
+import org.caojun.designpatterns.fragment.*
 
 class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
@@ -18,22 +15,20 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
             1 -> SingletonFragment()
             2 -> BuilderFragment()
             3 -> PrototypeFragment()
+            4 -> FactoryFragment()
             else -> PrincipleFragment()
         }
     }
 
     override fun getCount(): Int {
-        return 4
+        return 5
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        return when (position) {
-            0 -> context.getString(R.string.principle)
-            1,2,3,4,5,6 -> {
-                val designPatterns = context.resources.getStringArray(R.array.design_patterns)
-                designPatterns[position - 1]
-            }
-            else -> context.getString(R.string.principle)
+        if (position in 1 .. 23) {
+            val designPatterns = context.resources.getStringArray(R.array.design_patterns)
+            return designPatterns[position - 1]
         }
+        return context.getString(R.string.principle)
     }
 }
