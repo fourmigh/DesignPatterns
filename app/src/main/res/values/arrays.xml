@@ -46,4 +46,21 @@
         <item>单例模式一般没有接口，扩展很困难，若要扩展，除了修改代码，基本上没有第二种途径可以实现。</item>
         <item>单例对象如果持有Context，那么很容易引发内存泄露，此时需要注意传递给单例对象的Context最好是Application Context。</item>
     </array>
+
+    <array name="builder_advantages">
+        <item>（1）良好的封装性，使用建造者模式可以使客户端不必知道产品内部组成的细节。</item>
+        <item>（2）建造者独立，容易扩展。</item>
+    </array>
+
+    <array name="builder_disadvantages">
+        <item>会产生多余的Builder对象以及Director对象，消耗内存。</item>
+    </array>
+
+    <array name="prototype_advantages">
+        <item>原型模式是在内存中二进制流的拷贝，要比直接new一个对象性能好很多，特别是要在一个循环体内产生大量的对象时，原型模式可以更好地体现其优点。</item>
+    </array>
+
+    <array name="prototype_disadvantages">
+        <item>这既是它的优点也是缺点，直接在内存中拷贝，构造函数是不会执行的，在实际开发当中应该注意这个潜在的问题。优点就是减少了约束，缺点也是减少了约束，需要大家在实际应用时考虑。</item>
+    </array>
 </resources>
