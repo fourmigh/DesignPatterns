@@ -1,12 +1,14 @@
 package org.caojun.designpatterns.adapter
 
+import android.content.Context
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import org.caojun.designpatterns.R
 import org.caojun.designpatterns.fragment.PrincipleFragment
 import org.caojun.designpatterns.fragment.SingletonFragment
 
-class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
+class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
         return when (position) {
@@ -18,5 +20,16 @@ class SectionsPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getCount(): Int {
         return 2
+    }
+
+    override fun getPageTitle(position: Int): CharSequence? {
+        return when (position) {
+            0 -> context.getString(R.string.principle)
+            1 -> {
+                val designPatterns = context.resources.getStringArray(R.array.design_patterns)
+                designPatterns[0]
+            }
+            else -> context.getString(R.string.principle)
+        }
     }
 }

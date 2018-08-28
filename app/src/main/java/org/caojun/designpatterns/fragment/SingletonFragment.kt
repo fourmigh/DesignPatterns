@@ -67,9 +67,6 @@ class SingletonFragment: Fragment() {
         Singleton1.getInstance().doSomething()
         Singleton2.getInstance().doSomething()
 
-        val designPatterns = this.resources.getStringArray(R.array.design_patterns)
-        tvLabel.text = designPatterns[0]
-
         tvSingleton1.text = "    private class Singleton1 {\n" +
                 "        companion object {\n" +
                 "            private var mInstance: Singleton1? = null\n" +
