@@ -25,10 +25,12 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
     }
 
     override fun getPageTitle(position: Int): CharSequence? {
-        if (position in 1 .. 23) {
-            val designPatterns = context.resources.getStringArray(R.array.design_patterns)
-            return designPatterns[position - 1]
+        return when (position) {
+            in 1 .. 23 -> {
+                val designPatterns = context.resources.getStringArray(R.array.design_patterns)
+                designPatterns[position - 1]
+            }
+            else -> context.getString(R.string.principle)
         }
-        return context.getString(R.string.principle)
     }
 }
