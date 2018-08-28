@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
                 toolbar.title = title
             }
         })
+        toolbar.title = mSectionsPagerAdapter?.getPageTitle(0)
     }
 
 
