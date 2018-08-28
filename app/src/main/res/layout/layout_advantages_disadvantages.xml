@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <org.caojun.expandtextview.ExpandTextView
+                android:id="@+id/etvAdvantages"
+                app:titleText="@string/advantages"
+                app:minVisibleLines="2"
+                app:expandHint="@string/expand_open"
+                app:foldHint="@string/expand_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <org.caojun.expandtextview.ExpandTextView
+                android:id="@+id/etvDisadvantages"
+                app:titleText="@string/disadvantages"
+                app:minVisibleLines="2"
+                app:expandHint="@string/expand_open"
+                app:foldHint="@string/expand_close"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

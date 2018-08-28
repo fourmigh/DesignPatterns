@@ -7,6 +7,8 @@
     <string name="rn">%s\n%s</string>
 
     <string name="principle">面向对象的六大原则</string>
+    <string name="advantages">优点</string>
+    <string name="disadvantages">缺点</string>
 
     <string name="srp">就一个类而言，应该仅有一个引起它变化的原因，即一个类中应该是一组相关性很高的函数、数据的封装。</string>
     <string name="ocp">软件中的对象（类、模块、函数等）应该对于扩展是开放的，但是，对于修改是封闭的。因此，当软件需要变化时，应该尽量通过扩展的方式来实现变化，而不是通过修改已有的代码来实现。</string>

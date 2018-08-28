@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_singleton.*
+import kotlinx.android.synthetic.main.layout_advantages_disadvantages.*
 import org.caojun.designpatterns.R
+import org.caojun.designpatterns.utils.ArrayUtils
 
 /**
  * 单例模式
@@ -109,5 +111,8 @@ class SingletonFragment: Fragment() {
                 "            Log.d(\"Singleton2\", \"do sth.\")\n" +
                 "        }\n" +
                 "    }"
+
+        etvAdvantages.content = ArrayUtils.getString(context!!, R.array.singleton_advantages)
+        etvDisadvantages.content = ArrayUtils.getString(context!!, R.array.singleton_disadvantages)
     }
 }
