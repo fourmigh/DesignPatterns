@@ -100,4 +100,12 @@
     <array name="state_disadvantages">
         <item>状态模式的使用必然会增加系统类和对象的个数。</item>
     </array>
+
+    <array name="iterator_advantages">
+        <item>对请求者和处理者关系解耦，提高代码的灵活性。</item>
+    </array>
+
+    <array name="iterator_disadvantages">
+        <item>对链中的请求处理者的遍历，如果处理者太多，那么遍历必定会影响性能，特别是在一些递归调用中，要慎重。</item>
+    </array>
 </resources>
