@@ -15,6 +15,7 @@
     <string name="observer">观察者模式在Android中典型实例：ListView的BaseAdapter以及广播</string>
     <string name="memoto">备忘录模式在Activity中的实例：onSaveInstanceState和onRestoreInstanceState</string>
     <string name="iterator">几乎每一种高级语言都有相应的内置实现，对于开发者而言，已经极少会由自己来实现迭代器了。\n迭代器模式在Android中典型实例：数据库查询使用的Cursor</string>
+    <string name="template">模板方法模式在Android中的实例：Activity的启动流程onCreate、onStart、onResume</string>
 
     <string name="srp">就一个类而言，应该仅有一个引起它变化的原因，即一个类中应该是一组相关性很高的函数、数据的封装。</string>
     <string name="ocp">软件中的对象（类、模块、函数等）应该对于扩展是开放的，但是，对于修改是封闭的。因此，当软件需要变化时，应该尽量通过扩展的方式来实现变化，而不是通过修改已有的代码来实现。</string>

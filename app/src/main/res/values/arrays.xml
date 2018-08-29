@@ -134,4 +134,13 @@
     <array name="iterator_disadvantages">
         <item>对类文件的增加。</item>
     </array>
+
+    <array name="template_advantages">
+        <item>（1）封装不变部分，扩展可变部分。</item>
+        <item>（2）提取公共部分代码，便于维护。</item>
+    </array>
+
+    <array name="template_disadvantages">
+        <item>模板方法会带来代码阅读的难度，会让用户觉得难以理解。</item>
+    </array>
 </resources>
