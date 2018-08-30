@@ -156,4 +156,12 @@
         <item>（2）具体元素变更时导致修改成本大。</item>
         <item>（3）违反了依赖倒置原则，为了达到“区别对待”而依赖了具体类，没有依赖抽象。</item>
     </array>
+
+    <array name="proxy_advantages">
+        <item>代理模式几乎没有什么缺点可言，它是细分化至很小的一种模式。</item>
+    </array>
+
+    <array name="proxy_disadvantages">
+        <item>所有设计模式的通病：对类的增加。</item>
+    </array>
 </resources>
