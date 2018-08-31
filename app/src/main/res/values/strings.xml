@@ -21,6 +21,7 @@
     <string name="composite">组合模式在开发过程中应用不算多，更适用于对一些界面UI的架构设计上。\n在Android中的实例：View和ViewGroup的嵌套组合。</string>
     <string name="adapter">适配器模式在Android中的实例：ListView、GridView、RecyclerView的Adapter。</string>
     <string name="decorator">装饰模式其实并不复杂，就是一种类间的封装，我们在平时的开发过程中也经常会不经意地使用到类似的概念，比如我们常会在Activity的onCreate方法中做一些相关的初始化操作。\n%s\n\n其实如上的一些新增方法的调用就类似装饰模式中装饰者的职责，只不过这里我们没有保持对组件类的引用。\n\n装饰模式和代理模式有点类似，有时甚至容易混淆，倒不是说会把代理模式当成装饰，而常常会是将装饰看作代理。\n装饰模式是以对客户端透明的方式扩展对象的功能，是继承关系的一个替代方案；\n而代理模式则是给一个对象提供一个代理对象，并由代理对象来控制对原有对象的引用。\n\n装饰模式应该为所装饰的对象增强功能；代理模式对代理的对象施加控制，但不对对象本身的功能进行增强。</string>
+    <string name="facade">外观模式在Android中的实例：Context封装了很多重要的操作，如startActivity()、sendBroadcast()、bindService()等。Context只是一个定义了很多接口的抽象类，这些接口的功能实现并不是在Context及其子类中，而是通过其他子系统来完成。</string>
 
     <string name="srp">就一个类而言，应该仅有一个引起它变化的原因，即一个类中应该是一组相关性很高的函数、数据的封装。</string>
     <string name="ocp">软件中的对象（类、模块、函数等）应该对于扩展是开放的，但是，对于修改是封闭的。因此，当软件需要变化时，应该尽量通过扩展的方式来实现变化，而不是通过修改已有的代码来实现。</string>
