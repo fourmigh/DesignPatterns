@@ -203,4 +203,12 @@
         <item>（1）外观类接口膨胀。由于子系统的接口都有外观类统一对外暴露，使得外观类的API接口较多，在一定程度上增加了用户使用成本。</item>
         <item>（2）外观类没有遵循开闭原则，当业务出现变更时，可能需要直接修改外观类。</item>
     </array>
+
+    <array name="bridge_advantages">
+        <item>分离抽象与实现，灵活的扩展，对客户端说透明的实现。</item>
+    </array>
+
+    <array name="bridge_disadvantages">
+        <item>不容易设计，对开发者来说要有一定的经验要求。</item>
+    </array>
 </resources>
