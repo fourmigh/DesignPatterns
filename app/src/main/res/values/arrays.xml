@@ -184,4 +184,13 @@
     <array name="adapter_disadvantages">
         <item>过多地使用适配器，会让系统非常凌乱，不易整体把握。例如，明明看到调用的是A接口，其实内部被适配成了B接口的实现，一个系统如果出现太多这种情况，无异于一场灾难。因此，如果不是很有必要，可以不使用适配器，而是直接对系统进行重构。</item>
     </array>
+
+    <array name="flyweight_advantages">
+        <item>大大减少应用程序创建的对象，降低程序内存的占用，增强程序的性能。</item>
+    </array>
+
+    <array name="flyweight_disadvantages">
+        <item>（1）使得系统更加复杂。为了使对象可以共享，需要将一些状态外部化，这使得程序的逻辑复杂化。</item>
+        <item>（2）将享元对象的状态外部化，而读取外部状态使得运行时间稍微变长。</item>
+    </array>
 </resources>

@@ -32,12 +32,13 @@ class SectionsPagerAdapter(private val context: Context, fm: FragmentManager) : 
             19 -> CompositeFragment()
             20 -> AdapterFragment()
             21 -> DecoratorFragment()
+            22 -> FlyweightFragment()
             else -> PrincipleFragment()
         }
     }
 
     override fun getCount(): Int {
-        return 22
+        return 23
     }
 
     override fun getPageTitle(position: Int): CharSequence {
