@@ -61,6 +61,14 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onBackPressed() {
+        when (container.currentItem) {
+            0 -> super.onBackPressed()
+            1 -> container.setCurrentItem(0, true)
+            else -> container.setCurrentItem(1, true)
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
