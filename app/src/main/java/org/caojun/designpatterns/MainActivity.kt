@@ -1,5 +1,10 @@
 package org.caojun.designpatterns
 
+import android.app.Activity
+import android.app.KeyguardManager
+import android.content.Context
+import android.content.Intent
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v4.view.ViewPager
@@ -45,9 +50,22 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
-                val title = mSectionsPagerAdapter.getPageTitle(position)
-//                toolbar.title = title
-                setTitle(title, position, mSectionsPagerAdapter.count)
+//                val title = mSectionsPagerAdapter.getPageTitle(position)
+////                toolbar.title = title
+//                setTitle(title, position, mSectionsPagerAdapter.count)
+
+                this@MainActivity.position = position
+                if (position > 1 && !isLoggedIn) {
+                    //查看正文，需先跳转系统锁界面
+                    if (!showAuthenticationScreen()) {
+                        isLoggedIn = true
+                        showViewPager(position)
+                    }
+                    return
+                } else {
+                    showViewPager(position)
+                }
+                positionLast = position
             }
         })
 //        toolbar.title = mSectionsPagerAdapter?.getPageTitle(0)
@@ -89,5 +107,47 @@ class MainActivity : AppCompatActivity() {
 
     private fun setTitle(title: CharSequence, position: Int, size: Int) {
         toolbar.title = "(${position + 1}/$size)$title"
+    }
+
+    //看正文需先跳转系统锁界面
+    companion object {
+        const val REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS = 1
+    }
+    private var isLoggedIn = false
+    private var position = 0
+    private var positionLast = 0
+    private fun showAuthenticationScreen(): Boolean {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            return false
+        }
+        val mKeyguardManager = getSystemService(Context.KEYGUARD_SERVICE) as KeyguardManager
+        if (!mKeyguardManager.isKeyguardSecure) {
+            return false
+        }
+        val intent = mKeyguardManager.createConfirmDeviceCredentialIntent(null, null)
+        if (intent != null) {
+            startActivityForResult(intent, REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS)
+            return true
+        }
+        return false
+    }
+
+    private fun showViewPager(position: Int) {
+        val title = mSectionsPagerAdapter.getPageTitle(position)
+        setTitle(title, position, mSectionsPagerAdapter.count)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE_CONFIRM_DEVICE_CREDENTIALS) {
+            if (resultCode == Activity.RESULT_OK) {
+                isLoggedIn = true
+                showViewPager(position)
+            } else {
+                isLoggedIn = false
+                container.setCurrentItem(positionLast, true)
+            }
+            return
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
